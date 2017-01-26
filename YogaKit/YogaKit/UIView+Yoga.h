@@ -8,7 +8,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "YGLayout.h"
+#import <YogaKit/YGLayout.h>
 
 @interface UIView (Yoga)
 

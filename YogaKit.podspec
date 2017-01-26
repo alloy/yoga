@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name                 = 'YogaKit'
   spec.version              = '1.0.0'
-  spec.license              = { :type => 'BSD-3-Clause', :file => '../LICENSE' }
+  spec.license              = { :type => 'BSD-3-Clause', :file => 'LICENSE' }
   spec.homepage             = 'https://facebook.github.io/yoga/'
   spec.authors              = {
                               'Emil Sjölander'      => 'sjolander.emil@gmail.com',
@@ -16,17 +16,12 @@ Pod::Spec.new do |spec|
   spec.documentation_url    = 'https://facebook.github.io/yoga/docs/getting-started/'
   spec.source               = { :git => 'https://github.com/facebook/yoga.git', :tag => "v#{spec.version}" }
   spec.platform             = :ios
-  spec.source_files         = 'YogaKit/*.{h,m}', 'lib/*.{h,c}'
-  spec.public_header_files  = [
-    'YogaKit/YogaKit.h',
-    'YogaKit/YGLayout.h',
-    'YogaKit/UIView+Yoga.h',
-    'lib/YGEnums.h',
-    'lib/YGMacros.h'
-  ]
+  spec.cocoapods_version    = '>= 1.2.0.beta.1'
+  spec.pod_target_xcconfig  = { 'HEADER_SEARCH_PATHS' => '$(PODS_TARGET_SRCROOT)' }
+  spec.source_files         = 'YogaKit/YogaKit', 'yoga'
   spec.private_header_files = [
-    'YogaKit/YGLayout+Private.h',
-    'lib/YGNodeList.h',
-    'lib/Yoga.h'
+    'YogaKit/YogaKit/YGLayout+Private.h',
+    'yoga/YGNodeList.h',
+    'yoga/Yoga.h'
   ]
 end
